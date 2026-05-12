@@ -1,0 +1,5 @@
+cypress.env.json
+.idea
+node_modules
+cypress/downloads
+cypress/screenshots/

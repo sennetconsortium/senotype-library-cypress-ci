@@ -1,0 +1,15 @@
+{
+  "name": "cypress-senotype-library",
+  "version": "1.0.0",
+  "description": "Cypress Tests for the Senotype Library",
+  "author": "dbmi.pitt.edu",
+  "scripts": {
+    "start": "npx cypress run",
+    "cli": "cypress run --browser chrome",
+    "gui": "npx cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^14.4.1",
+    "cypress-iframe": "^1.0.1"
+  }
+}
