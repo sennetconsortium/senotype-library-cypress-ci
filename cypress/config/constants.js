@@ -13,6 +13,7 @@ const URLS = {
 const PATHS = {
   home: URLS.domain,
   search: URLS.domain + "search",
+  create: URLS.domain + "senotype/create",
 };
 
 const WAIT = {
