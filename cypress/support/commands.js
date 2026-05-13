@@ -35,13 +35,14 @@ Cypress.Commands.add('interceptProtocols', () => {
 })
 
 Cypress.Commands.add('search', (keyword) => {
-    cy.get('#appSearch').clear().type(`${keyword}{enter}`)
+    cy.get("#query").as("searchBox").clear();
+    cy.get("@searchBox").type(`${keyword}{enter}`, { force: true });
+    cy.wait(WAIT.time * 2);
 })
 
 Cypress.Commands.add(
   "download",
   (filename, sel = ".c-searchResults__export .btn") => {
-    cy.get(SEL.bulk).click();
     cy.get(sel).click();
     cy.wait(WAIT.time * 2);
     cy.readFile(`cypress/downloads/${filename}`).should("exist");

@@ -1,18 +1,23 @@
 import {MSGS, PATHS, SEL, WAIT} from "../../config/constants";
 
-describe(`${MSGS.name}.Table.Filter`, () => {
+describe(`${MSGS.name}.Table.Facets`, () => {
 
     beforeEach(() => {
         cy.login()
         cy.visit(PATHS.search)
     })
 
-    it('Can filter', () => {
-        //cy.appFilter( 'Status', 'New')
-
-        cy.get('.c-badge').each(($el, index, $list) => {
-            $el.hasClass('.c-badge--new')
-        })
+    it('Can filter with facet', () => {
+        cy.get(".sui-facet__title--DatasetType").click();
+        cy.get("#sui-facet--DatasetType-CellDIVE").click();
+        cy.wait(WAIT.time);
+        cy.get(".ant-table-row").each(($el, index, $list) => {
+          cy.wrap($el)
+            .find(".ant-table-cell")
+            .eq(6)
+            .should("have.text", "Cell DIVE");
+        });
+        cy.get(".sui-chipToggle--assay-CellDIVE").should("have.length", 1);
 
     })
 })

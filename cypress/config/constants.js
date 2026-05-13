@@ -3,12 +3,7 @@ const MSGS = {
 };
 
 const SEL = {
-  switchBtn: ".js-gtm--btn-cta-switch",
-  entityDropdown: ".js-gtm--btn-cta-entityDropdown",
-  bulk: ".c-table--header .ant-dropdown-trigger",
-  bulkProcess: ".anticon-thunderbolt ~ .ant-dropdown-menu-title-content",
-  bulkEdit: ".anticon-edit ~ .ant-dropdown-menu-title-content",
-  bulkValidate: ".anticon-bug ~ .ant-dropdown-menu-title-content",
+  table: ".js-gtm--btn-cta-switch",
 };
 
 const URLS = {
@@ -26,13 +21,7 @@ const WAIT = {
 };
 
 const DATA = {
-  uploads: {
-    reorganized: "SNT775.JZRF.852",
-  },
-  datasets: {
-    rnaSeq: "SNT538.NMNT.483",
-    tenX: "SNT537.PJPR.956",
-  },
+  markers: "SNT594.GFCC.674",
 };
 
 export { URLS, WAIT, PATHS, MSGS, SEL, DATA };
