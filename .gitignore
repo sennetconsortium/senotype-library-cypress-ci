@@ -3,3 +3,4 @@ cypress.env.json
 node_modules
 cypress/downloads
 cypress/screenshots/
+.DS_Store

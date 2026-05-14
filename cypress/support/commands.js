@@ -40,6 +40,36 @@ Cypress.Commands.add('search', (keyword) => {
     cy.wait(WAIT.time * 2);
 })
 
+Cypress.Commands.add("selectFromValueset", (id) => {
+  cy.get(`#c-inputField--${id} .ant-select`).click({ force: true });
+  cy.get(`.c-inputField__selectDropdown--${id} .ant-select-item-option`)
+    .eq(0)
+    .should("be.visible")
+    .click({ force: true });
+  cy.get("body").type("{esc}");
+});
+
+Cypress.Commands.add("searchForValueset", (id, term) => {
+  cy.get(`#c-inputField--${id} .ant-select`).click({ force: true });
+  cy.get(`[id="${id}"]`).as("input");
+  cy.get("@input").type(`${term}{enter}`);
+  cy.get(`.c-inputField__selectDropdown--${id} .ant-select-item-option`)
+    .eq(0)
+    .should("be.visible")
+    .click({ force: true });
+  cy.get("body").type("{esc}");
+});
+
+Cypress.Commands.add("inputGroup", (id, values) => {
+  cy.get(
+    `#c-formInputGroup--${id} .input-group .form-control:not([disabled])`,
+  ).each(($el, index, $list) => {
+    cy.wrap($el)
+      .clear()
+      .type(`${values[index]}{enter}`);
+  });
+});
+
 Cypress.Commands.add(
   "download",
   (filename, sel = ".c-searchResults__export .btn") => {
