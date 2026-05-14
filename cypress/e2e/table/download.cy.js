@@ -1,4 +1,4 @@
-import {MSGS, PATHS} from "../../config/constants";
+import {MSGS, PATHS, DATA} from "../../config/constants";
 
 describe(`${MSGS.name}.Table.Download`, () => {
 
@@ -8,9 +8,9 @@ describe(`${MSGS.name}.Table.Download`, () => {
     })
 
     it('Downloads CSV file', () => {
-        const date = new Date()
+        const date = DATA.getDate();
         cy.download(
-          `senotypes-${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}.csv`,
+          `senotypes-${date}.csv`,
         );
     })
 })

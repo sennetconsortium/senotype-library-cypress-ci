@@ -23,6 +23,10 @@ const WAIT = {
 };
 
 const DATA = {
+  getDate: () => {
+    const date = new Date();
+    return `${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`
+  },
   markers: "SNT594.GFCC.674",
   specifiedMarker: {
     uuid: "6d71fc64fb291e419bc905b7f2de1dd3",

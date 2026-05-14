@@ -7,8 +7,8 @@ describe(`${MSGS.name}.Form.Edit`, () => {
   });
 
   it("Can edit form", () => {
-    const date = new Date();
-    const title = `Cypress automated title ${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`;
+    const date = DATA.getDate();
+    const title = `Cypress automated title ${date}`;
     cy.get("input[required]")
       .should("have.length", 1)
       .clear()
@@ -18,7 +18,7 @@ describe(`${MSGS.name}.Form.Edit`, () => {
     cy.get("textarea")
       .clear()
       .type(
-        `Cypress automated description ${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`,
+        `Cypress automated description ${date}`,
       );
 
     cy.get('[type="submit"').click();
@@ -27,5 +27,6 @@ describe(`${MSGS.name}.Form.Edit`, () => {
     cy.contains('View Senotype').click()
     cy.wait(WAIT.time);
     cy.contains(title)
+    cy.download(`senotypes-${date}.csv`, "#specified-markers ");
   });
 });
