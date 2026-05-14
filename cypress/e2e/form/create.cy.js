@@ -32,12 +32,11 @@ describe(`${MSGS.name}.Form.Create`, () => {
       cy.get(`[id="${i[0]}"]`).type(`${i[1]}{enter}`);
       cy.get("body").type("{esc}");
       cy.wait(WAIT.time);
-      //cy.get("input[required]").focus().blur();
     });
 
-    //   cy.get('[type="submit"').click();
-    //   cy.wait(WAIT.time * 5);
-    //   cy.get(".anticon-check-circle").should('have.length', 1);
+    cy.get('[type="submit"').click();
+    cy.wait(WAIT.time * 5);
+    cy.get(".anticon-check-circle").should('have.length', 1);
   });
 
   it("Can fill out valuesets", () => {
