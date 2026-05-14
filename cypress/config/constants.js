@@ -14,6 +14,7 @@ const PATHS = {
   home: URLS.domain,
   search: URLS.domain + "search",
   create: URLS.domain + "senotype/create",
+  edit: URLS.domain + "senotype/edit/",
 };
 
 const WAIT = {
@@ -23,6 +24,9 @@ const WAIT = {
 
 const DATA = {
   markers: "SNT594.GFCC.674",
+  specifiedMarker: {
+    uuid: "6d71fc64fb291e419bc905b7f2de1dd3",
+  },
 };
 
 export { URLS, WAIT, PATHS, MSGS, SEL, DATA };
